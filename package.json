@@ -2,9 +2,9 @@
   "name": "kolokwium-23-24-jenkins-1-s24530",
   "version": "1.0.0",
   "description": "Jenkins pipeline example for Kolokwium 23/24",
-  "main": "index.js",
+  "main": "calculator.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node calculator.js",
     "test": "mocha test/*.test.js",
     "lint": "eslint ."
   },

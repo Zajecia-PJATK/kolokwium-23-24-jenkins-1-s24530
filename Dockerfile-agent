@@ -1,0 +1,23 @@
+# Używamy obrazu Jenkins Inbound Agent, który zawiera Jenkins Agent i Docker CLI
+FROM jenkins/inbound-agent:latest
+
+USER root
+
+# Instalujemy Node.js LTS (długoterminowe wsparcie) z repozytorium NodeSource
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt-get install -y nodejs
+
+# Instalujemy npm globalnie
+RUN npm install -g npm
+
+# Instalujemy ESLint globalnie
+RUN npm install -g eslint
+
+# Instalujemy Mocha globalnie
+RUN npm install -g mocha
+
+# Ustawiamy katalog roboczy na /workspace
+WORKDIR /workspace
+
+# Domyślne polecenie uruchamiane po starcie kontenera
+CMD ["sleep", "infinity"]

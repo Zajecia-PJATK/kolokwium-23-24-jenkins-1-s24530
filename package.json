@@ -1,18 +1,17 @@
 {
   "name": "kolokwium-23-24-jenkins-1-s24530",
   "version": "1.0.0",
-  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/6YXofgcs)",
+  "description": "Jenkins pipeline example for Kolokwium 23/24",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha test/*.test.js",
-    "lint": "eslint src/*.js"
+    "lint": "eslint ."
   },
-  "keywords": [],
-  "author": "",
+  "author": "Twoje Imię",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^10.0.0",
     "eslint": "^8.0.0",
-    "chai": "^4.0.0"
+    "mocha": "^10.0.0"
   }
 }

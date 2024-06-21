@@ -16,7 +16,6 @@ pipeline {
         stage('Budowanie i uruchamianie aplikacji') {
             steps {
                 sh 'npm install'
-                sh 'npm run build'
                 sh 'npm start &'
             }
         }

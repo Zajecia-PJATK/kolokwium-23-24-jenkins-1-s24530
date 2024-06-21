@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git "https://github.com/Zajecia-PJATK/kolokwium-23-24-jenkins-1-s24530.git"
+                git url:"https://github.com/Zajecia-PJATK/kolokwium-23-24-jenkins-1-s24530.git", branch:"main"
             }
         }
 

@@ -4,7 +4,7 @@
   "description": "Jenkins pipeline example for Kolokwium 23/24",
   "main": "calculator.js",
   "scripts": {
-    "start": "node calculator.js",
+    "start": "node src/calculator.js",
     "test": "mocha test/*.test.js",
     "lint": "eslint ."
   },

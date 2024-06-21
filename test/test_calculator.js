@@ -1,25 +1,32 @@
-// test/calculator.test.js
-const { expect } = require('chai');
-const calculator = require('../calculator');
+const Calculator = require('../src/calculator');
+const assert = require('assert');
 
 describe('Calculator', () => {
-    it('should add two numbers', () => {
-        expect(calculator.add(2, 3)).to.equal(5);
-    });
+  let calculator;
 
-    it('should subtract two numbers', () => {
-        expect(calculator.subtract(5, 3)).to.equal(2);
-    });
+  beforeEach(() => {
+    calculator = new Calculator();
+  });
 
-    it('should multiply two numbers', () => {
-        expect(calculator.multiply(2, 3)).to.equal(6);
-    });
+  it('should add two numbers correctly', () => {
+    assert.strictEqual(calculator.add(1, 2), 3);
+  });
 
-    it('should divide two numbers', () => {
-        expect(calculator.divide(6, 3)).to.equal(2);
-    });
+  it('should subtract two numbers correctly', () => {
+    assert.strictEqual(calculator.subtract(5, 2), 3);
+  });
 
-    it('should throw an error when dividing by zero', () => {
-        expect(() => calculator.divide(1, 0)).to.throw('Division by zero');
-    });
+  it('should multiply two numbers correctly', () => {
+    assert.strictEqual(calculator.multiply(3, 4), 12);
+  });
+
+  it('should divide two numbers correctly', () => {
+    assert.strictEqual(calculator.divide(8, 2), 4);
+  });
+
+  it('should throw an error when dividing by zero', () => {
+    assert.throws(() => {
+      calculator.divide(8, 0);
+    }, Error, "Cannot divide by zero");
+  });
 });

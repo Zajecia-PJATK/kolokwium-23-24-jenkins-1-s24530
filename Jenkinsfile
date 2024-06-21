@@ -7,32 +7,23 @@ pipeline {
                 git "https://github.com/Zajecia-PJATK/kolokwium-23-24-jenkins-1-s24530.git"
             }
         }
-        stage('Build') {
+        stage('Budowanie i uruchamianie aplikacji') {
             steps {
-                script {
-                    def app = docker.build("my-js-app")
-                }
+                sh 'npm install'
+                sh 'npm run build'
+                sh 'npm start &'
             }
         }
+
         stage('Test') {
-            steps {
-                script {
-                    def app = docker.image("my-js-app")
-                    app.inside {
-                        sh 'npm test'
-                    }
-                }
+           steps {
+                sh 'npm test'
             }
-            post {
-                always {
-                    junit 'test-results.xml'
-                }
-            }
+           
         }
-        stage('Lint') {
+       stage('Analiza statyczna kodu za pomocą ESLint') {
             steps {
-                sh 'npm install eslint --save-dev'
-                sh './node_modules/.bin/eslint .'
+                sh 'npm run lint'
             }
         }
     }
